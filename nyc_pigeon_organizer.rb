@@ -5,13 +5,13 @@ def nyc_pigeon_organizer(data)
       names.each do |name|
         if birds[name] 
           if birds[name][category]
-            birds[name][category] << type_key
+            birds[name][category] << type_key.to_s
           else
-            birds[name][category] = [type_key] 
+            birds[name][category] = [type_key.to_s] 
           end  
         else
           birds[name] = {}
-          birds[name][category] = [type_key] 
+          birds[name][category] = [type_key.to_s] 
         end
       end  
     end
