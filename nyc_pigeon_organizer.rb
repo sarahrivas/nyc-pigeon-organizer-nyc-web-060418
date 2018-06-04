@@ -3,7 +3,16 @@ def nyc_pigeon_organizer(data)
   data.each do |category, types|
     types.each do |type_key, names|
       names.each do |name|
-        birds[name] = {category}
+        if birds[name] 
+          if birds[name][category]
+            birds[name][category] << type_key
+          else
+            birds[name][category] = type_key 
+          end  
+        else
+          birds[name] = {}
+          birds[name][category] = type_key 
+        end
       end  
     end
   end
