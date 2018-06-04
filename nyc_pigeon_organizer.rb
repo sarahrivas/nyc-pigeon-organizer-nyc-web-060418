@@ -7,11 +7,11 @@ def nyc_pigeon_organizer(data)
           if birds[name][category]
             birds[name][category] << type_key
           else
-            birds[name][category] = type_key 
+            birds[name][category] = [type_key] 
           end  
         else
           birds[name] = {}
-          birds[name][category] = type_key 
+          birds[name][category] = [type_key] 
         end
       end  
     end
